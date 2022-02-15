@@ -43,14 +43,14 @@ class _MyAppState extends State<MyApp> {
           colorScheme: theme.colorScheme.copyWith(primary: kPrimaryColor),
         ),
         home: StreamBuilder(
-                stream: FirebaseAuth.instance.authStateChanges(),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return const HomeScreen();
-                  }
-                  return const AuthScren();
-                },
-              ),
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return const HomeScreen();
+            }
+            return const AuthScren();
+          },
+        ),
         routes: {
           NotesScreen.routeName: (ctx) => const NotesScreen(),
           AddNoteScreen.routeName: (ctx) => const AddNoteScreen(),
